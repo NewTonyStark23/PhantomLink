@@ -4,6 +4,7 @@ import SetupWizard from './components/SetupWizard'
 import Dashboard from './components/Dashboard'
 import Sidebar from './components/Sidebar'
 import HowItWorks from './components/HowItWorks'
+import FullIntegration from './components/FullIntegration'
 import { AppProvider, useApp } from './context/AppContext'
 
 function AppContent() {
@@ -30,6 +31,8 @@ function AppContent() {
     switch (state.activeTab) {
       case 'how-it-works':
         return <HowItWorks />
+      case 'full-integration':
+        return <FullIntegration />
       case 'dashboard':
       default:
         return <Dashboard />
