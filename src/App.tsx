@@ -3,6 +3,7 @@ import TitleBar from './components/TitleBar'
 import SetupWizard from './components/SetupWizard'
 import Dashboard from './components/Dashboard'
 import Sidebar from './components/Sidebar'
+import HowItWorks from './components/HowItWorks'
 import { AppProvider, useApp } from './context/AppContext'
 
 function AppContent() {
@@ -21,13 +22,27 @@ function AppContent() {
     )
   }
 
+  const renderContent = () => {
+    if (!state.setupComplete) {
+      return <SetupWizard />
+    }
+    
+    switch (state.activeTab) {
+      case 'how-it-works':
+        return <HowItWorks />
+      case 'dashboard':
+      default:
+        return <Dashboard />
+    }
+  }
+
   return (
     <div className="h-screen w-screen flex flex-col bg-[#0a0a0f] overflow-hidden select-none">
       <TitleBar onMinimize={() => setMinimized(true)} />
       <div className="flex flex-1 overflow-hidden">
         <Sidebar />
         <main className="flex-1 overflow-y-auto">
-          {state.setupComplete ? <Dashboard /> : <SetupWizard />}
+          {renderContent()}
         </main>
       </div>
     </div>

@@ -1,11 +1,13 @@
 import { useApp } from '../context/AppContext'
 import {
   LayoutDashboard, Cable, Activity, Settings, Smartphone,
-  BarChart3, Shield, HelpCircle, Wifi, Zap, EyeOff, Fingerprint
+  BarChart3, Shield, HelpCircle, Wifi, Zap, EyeOff, Fingerprint,
+  Layers
 } from 'lucide-react'
 
 const navItems = [
   { id: 'dashboard', icon: LayoutDashboard, label: 'Dashboard' },
+  { id: 'how-it-works', icon: Layers, label: 'How It Works' },
   { id: 'connection', icon: Cable, label: 'Connection' },
   { id: 'monitor', icon: Activity, label: 'Monitor' },
   { id: 'phone', icon: Smartphone, label: 'Phone' },
