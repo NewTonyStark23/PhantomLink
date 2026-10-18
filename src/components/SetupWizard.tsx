@@ -20,7 +20,7 @@ import {
 } from 'lucide-react'
 
 const steps = [
-  { id: 'welcome', title: 'PhoneNet Bridge — Stealth Mode', subtitle: 'Your PC becomes your phone. Carrier sees nothing.' },
+  { id: 'welcome', title: 'PhantomLink — Invisible Device Extension', subtitle: 'Your phone/tablet becomes a full PC peripheral. Carrier sees nothing.' },
   { id: 'explain', title: 'How Carriers Detect Tethering', subtitle: 'Understanding what we need to hide' },
   { id: 'method', title: 'Choose Stealth Method', subtitle: 'How the tunnel will work' },
   { id: 'connect', title: 'Establish Stealth Bridge', subtitle: 'Creating the invisible tunnel' },
@@ -329,7 +329,7 @@ export default function SetupWizard() {
               <div className="bg-gray-800/30 border border-gray-700/50 rounded-xl p-6 text-left space-y-3">
                 <div className="flex items-center gap-3">
                   <Shield size={16} className="text-green-400" />
-                  <span className="text-gray-300 text-sm">Stealth Mode: <strong className="text-green-400">ACTIVE</strong></span>
+                  <span className="text-gray-300 text-sm">PhantomLink Mode: <strong className="text-green-400">ACTIVE</strong></span>
                 </div>
                 <div className="flex items-center gap-3">
                   <Fingerprint size={16} className="text-indigo-400" />

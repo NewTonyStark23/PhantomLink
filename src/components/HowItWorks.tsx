@@ -292,7 +292,7 @@ export default function HowItWorks() {
                       <div className="flex items-center justify-center gap-1"><Cable size={14} /> USB Tether</div>
                     </th>
                     <th className="text-center py-3 px-4 text-green-400 font-medium">
-                      <div className="flex items-center justify-center gap-1"><Shield size={14} /> PhoneNet Stealth</div>
+                      <div className="flex items-center justify-center gap-1"><Shield size={14} /> PhantomLink</div>
                     </th>
                   </tr>
                 </thead>
@@ -316,7 +316,7 @@ export default function HowItWorks() {
             <h3 className="font-semibold text-green-300 mb-2">The Bottom Line</h3>
             <p className="text-sm text-gray-300">
               Regular hotspot/tethering = carrier sees <strong className="text-red-400">two devices</strong> → hotspot billing.
-              PhoneNet Bridge = carrier sees <strong className="text-green-400">one device (your phone)</strong> → regular data billing.
+              PhantomLink = carrier sees <strong className="text-green-400">one device (your phone)</strong> → regular data billing.
               Your PC is just another "app" running on the phone as far as the carrier knows.
             </p>
           </div>

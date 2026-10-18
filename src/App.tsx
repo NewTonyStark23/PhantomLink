@@ -18,7 +18,7 @@ function AppContent() {
         className="fixed bottom-4 right-4 z-50 bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2 rounded-lg shadow-2xl shadow-indigo-500/30 flex items-center gap-2 transition-all"
       >
         <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
-        PhoneNet Bridge
+        PhantomLink
       </button>
     )
   }

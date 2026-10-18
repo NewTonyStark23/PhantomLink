@@ -31,11 +31,10 @@ export default function Dashboard() {
     <div className="p-6 space-y-6">
       {/* Header */}
       <div className="flex items-center justify-between">
-        <div>
-          <h1 className="text-2xl font-bold text-white">Stealth Bridge Dashboard</h1>
-          <p className="text-sm text-gray-400">Your PC is your phone — carrier cannot tell the difference</p>
-        </div>
-        <div className="flex items-center gap-3">
+      <div>
+        <h1 className="text-2xl font-bold text-white">PhantomLink Dashboard</h1>
+        <p className="text-sm text-gray-400">Your phone/tablet is a full PC extension — invisible to carrier</p>
+      </div>        <div className="flex items-center gap-3">
           <div className="flex items-center gap-2 px-3 py-1.5 bg-indigo-500/10 border border-indigo-500/20 rounded-lg">
             <EyeOff size={12} className="text-indigo-400" />
             <span className="text-xs text-indigo-300 font-medium">Stealth Active</span>
@@ -54,7 +53,7 @@ export default function Dashboard() {
             <Shield size={22} className="text-indigo-400" />
           </div>
           <div>
-            <p className="text-sm font-semibold text-white">Carrier Detection Score</p>
+            <p className="text-sm font-semibold text-white">PhantomLink Detection Score</p>
             <p className="text-xs text-gray-400">How detectable is your PC as a separate device?</p>
           </div>
         </div>

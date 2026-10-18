@@ -13,9 +13,9 @@ export default function TitleBar({ onMinimize }: TitleBarProps) {
           <div className="w-5 h-5 bg-gradient-to-br from-indigo-500 to-purple-600 rounded flex items-center justify-center">
             <Shield size={10} className="text-white" />
           </div>
-          <span className="text-xs font-medium text-gray-300">PhoneNet Bridge</span>
+          <span className="text-xs font-medium text-gray-300">PhantomLink</span>
           <span className="text-[10px] text-indigo-400 bg-indigo-500/10 px-1.5 py-0.5 rounded border border-indigo-500/20">STEALTH</span>
-          <span className="text-[10px] text-gray-600 bg-gray-800/50 px-1.5 py-0.5 rounded">v2.0</span>
+          <span className="text-[10px] text-gray-600 bg-gray-800/50 px-1.5 py-0.5 rounded">v3.0</span>
         </div>
       </div>
 

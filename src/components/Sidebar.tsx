@@ -102,10 +102,10 @@ export default function Sidebar() {
           </div>
         </div>
         <div className="bg-indigo-500/5 border border-indigo-500/10 rounded-lg p-3">
-          <p className="text-[10px] text-indigo-400 uppercase tracking-wider mb-1">Data Plan</p>
+          <p className="text-[10px] text-indigo-400 uppercase tracking-wider mb-1">PhantomLink</p>
           <div className="flex items-center gap-2">
             <Fingerprint size={12} className="text-green-400" />
-            <span className="text-xs text-green-400">Regular (not hotspot)</span>
+            <span className="text-xs text-green-400">Regular data (not hotspot)</span>
           </div>
         </div>
       </div>

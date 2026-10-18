@@ -2,10 +2,10 @@ import { useState } from 'react'
 import {
   Monitor, Cpu, HardDrive, Wifi, Zap, Layers, Cable,
   Smartphone, ArrowRight, Check, Play, Film, Gamepad2,
-  MemoryStick, RefreshCw, Gauge, Server, Radio
+  MemoryStick, RefreshCw, Gauge, Server, Radio, Hand
 } from 'lucide-react'
 
-type Tab = 'overview' | 'display' | 'compute' | 'pipeline'
+type Tab = 'overview' | 'display' | 'touch' | 'compute' | 'pipeline'
 
 export default function FullIntegration() {
   const [tab, setTab] = useState<Tab>('overview')
@@ -15,10 +15,10 @@ export default function FullIntegration() {
       <div>
         <h1 className="text-2xl font-bold text-white flex items-center gap-2">
           <Layers size={22} className="text-indigo-400" />
-          Full Integration Mode
+          PhantomLink — Full Integration
         </h1>
         <p className="text-sm text-gray-400 mt-1">
-          Your phone/tablet becomes a true PC extension — network, display, and compute
+          Your phone/tablet becomes a complete PC peripheral — network, display, input, compute, and video
         </p>
       </div>
 
@@ -27,6 +27,7 @@ export default function FullIntegration() {
         {[
           { id: 'overview', label: 'Overview', icon: <Layers size={14} /> },
           { id: 'display', label: 'Display Extension', icon: <Monitor size={14} /> },
+          { id: 'touch', label: 'Touch Input', icon: <Hand size={14} /> },
           { id: 'compute', label: 'Resource Pool', icon: <Cpu size={14} /> },
           { id: 'pipeline', label: 'Video Pipeline', icon: <Film size={14} /> },
         ].map(t => (
@@ -49,28 +50,37 @@ export default function FullIntegration() {
       {tab === 'overview' && (
         <div className="space-y-6">
           <div className="bg-gradient-to-br from-indigo-950/50 to-purple-950/50 border border-indigo-500/20 rounded-2xl p-8">
-            <h2 className="text-xl font-bold text-white mb-2 text-center">Four Layers of Integration</h2>
+            <h2 className="text-xl font-bold text-white mb-2 text-center">Five Layers of Integration</h2>
             <p className="text-center text-gray-400 text-sm mb-8">
-              One USB cable. Four capabilities. Your phone becomes a full PC peripheral.
+              One USB cable. Five capabilities. Your phone/tablet becomes a full PC peripheral.
             </p>
 
             <div className="space-y-3 max-w-3xl mx-auto">
-              {/* Layer 4 - Video Pipeline (top) */}
+              {/* Layer 5 - Video Pipeline (top) */}
               <IntegrationLayer
-                number={4}
+                number={5}
                 title="Video Pipeline"
                 description="Phone's GPU/NPU handles encoding, rendering, AI tasks"
                 icon={<Film size={18} />}
                 color="pink"
               />
               
-              {/* Layer 3 - Compute Resources */}
+              {/* Layer 4 - Compute Resources */}
               <IntegrationLayer
-                number={3}
+                number={4}
                 title="Resource Pool"
                 description="Phone's RAM, storage, and processor extend PC capabilities"
                 icon={<Cpu size={18} />}
                 color="purple"
+              />
+              
+              {/* Layer 3 - Touch Input */}
+              <IntegrationLayer
+                number={3}
+                title="Touch Input (Tablet)"
+                description="Tablet becomes mouse, touchpad, or drawing surface"
+                icon={<Hand size={18} />}
+                color="orange"
               />
               
               {/* Layer 2 - Display Extension */}
@@ -167,6 +177,126 @@ export default function FullIntegration() {
               <div className="bg-pink-500/10 border border-pink-500/20 rounded-lg p-2">
                 <p className="text-[10px] text-pink-300">Video Encode</p>
                 <p className="text-xs text-gray-400">← Phone NPU</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Touch Input */}
+      {tab === 'touch' && (
+        <div className="space-y-6">
+          <div className="bg-orange-500/5 border border-orange-500/20 rounded-2xl p-6">
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-10 h-10 bg-orange-600/20 rounded-xl flex items-center justify-center">
+                <Hand size={20} className="text-orange-400" />
+              </div>
+              <div>
+                <h2 className="text-xl font-bold text-white">Touch Input (Tablet Mode)</h2>
+                <p className="text-sm text-gray-400">Tablet becomes mouse, touchpad, or drawing surface</p>
+              </div>
+            </div>
+
+            <div className="space-y-4">
+              <p className="text-sm text-gray-300">
+                When a tablet is connected via USB, it can serve as a high-precision touch input device for your PC.
+                The tablet's touchscreen becomes a mouse pad, drawing tablet, or even a secondary touch display
+                with multi-touch gestures.
+              </p>
+
+              <div className="grid md:grid-cols-3 gap-4">
+                <div className="bg-gray-800/50 rounded-xl p-4">
+                  <h4 className="text-sm font-semibold text-white mb-2 flex items-center gap-2">
+                    <Hand size={14} className="text-orange-400" />
+                    Touchpad Mode
+                  </h4>
+                  <p className="text-xs text-gray-400 mb-2">
+                    Large tablet screen = giant precision touchpad. Perfect for laptops or when you want more space.
+                  </p>
+                  <ul className="text-xs text-gray-300 space-y-1">
+                    <li>• Multi-touch gestures</li>
+                    <li>• Palm rejection</li>
+                    <li>• Pressure sensitivity</li>
+                    <li>• Customizable zones</li>
+                  </ul>
+                </div>
+                <div className="bg-gray-800/50 rounded-xl p-4">
+                  <h4 className="text-sm font-semibold text-white mb-2 flex items-center gap-2">
+                    <Gamepad2 size={14} className="text-orange-400" />
+                    Drawing Tablet
+                  </h4>
+                  <p className="text-xs text-gray-400 mb-2">
+                    Use stylus with tablet for digital art, photo editing, or annotation.
+                  </p>
+                  <ul className="text-xs text-gray-300 space-y-1">
+                    <li>• 4096+ pressure levels</li>
+                    <li>• Low latency (&lt;10ms)</li>
+                    <li>• Tilt support</li>
+                    <li>• Works with Photoshop, etc</li>
+                  </ul>
+                </div>
+                <div className="bg-gray-800/50 rounded-xl p-4">
+                  <h4 className="text-sm font-semibold text-white mb-2 flex items-center gap-2">
+                    <Monitor size={14} className="text-orange-400" />
+                    Touch Display
+                  </h4>
+                  <p className="text-xs text-gray-400 mb-2">
+                    Tablet shows PC content AND accepts touch input. Interactive second screen.
+                  </p>
+                  <ul className="text-xs text-gray-300 space-y-1">
+                    <li>• Touch the display to control</li>
+                    <li>• Pinch/zoom/rotate</li>
+                    <li>• Swipe between apps</li>
+                    <li>• Perfect for presentations</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div className="bg-gray-900 rounded-xl p-4">
+                <h4 className="text-sm font-semibold text-white mb-3">Implementation</h4>
+                <div className="font-mono text-xs space-y-2">
+                  <p className="text-gray-500"># Tablet sends touch events to PC via USB HID</p>
+                  <p className="text-orange-300">Tablet: Capture touch → Package as HID report</p>
+                  <p className="text-orange-300">→ Send over USB interrupt transfer</p>
+                  <p className="text-cyan-300">PC: Receive HID → Translate to mouse/touch events</p>
+                  <p className="text-cyan-300">→ Inject into OS input stack</p>
+                  <p className="text-gray-500 mt-3"># Or use existing tools:</p>
+                  <p className="text-green-300">• VirtualTablet (Android app + PC client)</p>
+                  <p className="text-green-300">• SuperDisplay (USB + touch, commercial)</p>
+                  <p className="text-green-300">• Wacom drivers (if tablet supports pen)</p>
+                  <p className="text-green-300">• Custom HID gadget over ADB</p>
+                </div>
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-4">
+                <div className="bg-orange-500/10 border border-orange-500/20 rounded-lg p-4">
+                  <h4 className="text-sm font-semibold text-orange-300 mb-2">Advantages Over Mouse</h4>
+                  <ul className="text-xs text-gray-300 space-y-1">
+                    <li>✓ Larger surface area = more precision</li>
+                    <li>✓ Multi-touch gestures (pinch, rotate)</li>
+                    <li>✓ Pressure sensitivity for art</li>
+                    <li>✓ Can be mounted or positioned freely</li>
+                    <li>✓ No batteries (powered by USB)</li>
+                  </ul>
+                </div>
+                <div className="bg-orange-500/10 border border-orange-500/20 rounded-lg p-4">
+                  <h4 className="text-sm font-semibold text-orange-300 mb-2">Use Cases</h4>
+                  <ul className="text-xs text-gray-300 space-y-1">
+                    <li>🎨 Digital art & photo editing</li>
+                    <li>📊 Data visualization (touch to explore)</li>
+                    <li>🎮 Gaming (touch controls)</li>
+                    <li>📺 Presentations (touch to navigate)</li>
+                    <li>🎬 Video editing (touch timeline)</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div className="bg-orange-500/10 border border-orange-500/20 rounded-lg p-4">
+                <p className="text-sm text-orange-300">
+                  <strong>Pro tip:</strong> Since the tablet is already connected for display extension and network bridging,
+                  adding touch input is just another data stream over the same USB cable. The tablet becomes a true
+                  interactive peripheral — you see the PC's display on the tablet AND control it by touching the screen.
+                </p>
               </div>
             </div>
           </div>
@@ -462,7 +592,8 @@ function IntegrationLayer({ number, title, description, icon, color }: {
     pink: { bg: 'bg-pink-500/5', border: 'border-pink-500/30', text: 'text-pink-300', iconBg: 'bg-pink-600/20 text-pink-400' },
     purple: { bg: 'bg-purple-500/5', border: 'border-purple-500/30', text: 'text-purple-300', iconBg: 'bg-purple-600/20 text-purple-400' },
     cyan: { bg: 'bg-cyan-500/5', border: 'border-cyan-500/30', text: 'text-cyan-300', iconBg: 'bg-cyan-600/20 text-cyan-400' },
-    green: { bg: 'bg-green-500/5', border: 'border-green-500/30', text: 'text-green-300', iconBg: 'bg-green-600/20 text-green-400' }
+    green: { bg: 'bg-green-500/5', border: 'border-green-500/30', text: 'text-green-300', iconBg: 'bg-green-600/20 text-green-400' },
+    orange: { bg: 'bg-orange-500/5', border: 'border-orange-500/30', text: 'text-orange-300', iconBg: 'bg-orange-600/20 text-orange-400' }
   }
   const c = colorMap[color] || colorMap.green
 
